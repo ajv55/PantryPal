@@ -5,7 +5,7 @@ import { GiShoppingCart } from "react-icons/gi";
 
 export default function Sidebar() {
     return (
-        <header className="lg:w-80 w-fit lg:min-h-screen h-40 lg:flex lg:flex-col flex-col justify-between items-center p-3 lg:border-r border-b border-border ">
+        <header className="lg:w-80 sticky top-0 w-fit lg:min-h-screen h-40 lg:flex lg:flex-col flex-col justify-between items-center p-3 lg:border-r border-b border-border ">
                 <div className="lg:w-full text-ink flex lg:flex-col flex-col gap-1 justify-start items-start">
                   <div className="flex justify-start items-center text-3xl gap-1.5 text-brand-strong">
                     <span><FaLeaf /> </span>

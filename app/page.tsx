@@ -3,6 +3,9 @@ import { IoIosWarning } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
+import { FaChevronRight } from "react-icons/fa";
+import { LuMilk } from "react-icons/lu";
+import { LuBeef } from "react-icons/lu";
 
 
 
@@ -25,7 +28,7 @@ export default function Home() {
           <button className="flex flex-row lg:justify-evenly justify-center items-center gap-2.5 lg:w-46 w-75 p-3 bg-brand-strong rounded-xl hover:bg-muted hover:shadow-md hover:shadow-warning cursor-pointer text-canvas  hover:text-canvas"> <FaPlus /> Add Pantry Item</button>
         </div>
 
-        {/* Analytics three cards */}
+        {/* Summary Cards */}
         <section className="w-full flex lg:flex-row flex-col lg:gap-0 gap-5 justify-evenly items-center mt-3.5 h-32">
           <div className="w-83 flex flex-row justify-start items-start gap-5 bg-white h-full border border-border rounded-2xl p-4">
             <IoIosWarning size={50} color="#f59e0b" />
@@ -52,7 +55,69 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Need attention component */}
+        <section className="w-full flex flex-row border-4 border-green-500 h-full">
 
+          <div className="w-1/2 h-full border flex flex-col gap-3 border-orange-400 p-3">
+
+          <div className="bg-white flex flex-col border border-border h-40 rounded-xl">
+            <div className="flex flex-row justify-between items-center p-3">
+              <h4 className="text-2xl font-bold">Needs attention</h4>
+              <a href="#"><FaChevronRight size={20} /></a>
+            </div>
+
+            <div className="flex flex-row justify-between items-center">
+              <div className="flex flex-row gap-4 justify-center items-center p-2">
+                <LuMilk size={40} />
+                <div>
+                  <h6 className="font-semibold">Milk</h6>
+                  <p className="font-light">0.5 l remaining</p>
+                </div>
+              </div>
+
+              <div className="p-3 flex flex-col justify-center items-center gap-3">
+                <div className="w-35 h-8 bg-amber-200 rounded-3xl flex justify-center items-center text-md text-center"><p className="text-amber-500 font-bold">Low stock</p></div>
+                <p className="font-light text-sm">Threshold: 0.5 l</p>
+              </div>
+            </div>
+          </div>
+
+          {/* use soon card */}
+          <section className="bg-white border rounded-2xl border-border h-50">
+            <div className="flex flex-row justify-between items-center p-3">
+              <h4 className="text-2xl font-bold">Use soon</h4>
+              <a href="#"><FaChevronRight size={20} /></a>
+            </div>
+
+            <div className="flex flex-col justify-center items-center">
+              <div className="grid w-full grid-cols-[minmax(0,1fr)_4rem_4rem] items-center gap-3 border-b border-border p-4">
+                <div className="flex items-center gap-3">
+                  <LuMilk size={30} />
+                  <p className="font-semibold text-md">Milk</p>
+                </div>
+                <p className="text-right tabular-nums">0.5 l</p>
+                <p className="text-right">Nov 5</p>
+              </div>
+
+              <div className="grid w-full grid-cols-[minmax(0,1fr)_4rem_4rem] items-center gap-3 p-4">
+                <div className="flex items-center gap-3">
+                  <LuBeef size={30} />
+                  <p className="font-semibold text-md">Ground beef</p>
+                </div>
+                <p className="text-right tabular-nums">1 lb</p>
+                <p className="text-right">Nov 6</p>
+              </div>
+
+            </div>
+
+          </section>
+
+          </div>
+
+          <div className="w-1/2 h-full border border-purple-400">
+
+          </div>
+        </section>
 
       </section>
 
