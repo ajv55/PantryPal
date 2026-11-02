@@ -6,6 +6,7 @@ import { FaPlus } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { LuMilk } from "react-icons/lu";
 import { LuBeef } from "react-icons/lu";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 
 
@@ -56,9 +57,9 @@ export default function Home() {
         </section>
 
         {/* Need attention component */}
-        <section className="w-full flex flex-row border-4 border-green-500 h-full">
+        <section className="w-full flex flex-row h-100 lg:mt-1.5">
 
-          <div className="w-1/2 h-full border flex flex-col gap-3 border-orange-400 p-3">
+          <div className="w-1/2 h-full flex flex-col gap-4 p-3">
 
           <div className="bg-white flex flex-col border border-border h-40 rounded-xl">
             <div className="flex flex-row justify-between items-center p-3">
@@ -114,7 +115,54 @@ export default function Home() {
 
           </div>
 
-          <div className="w-1/2 h-full border border-purple-400">
+          {/* shopping list card */}
+          <div className="w-1/2 h-full  p-3">
+          <div className="bg-white flex flex-col justify-between w-full h-full border border-border rounded-2xl">
+            <div className="flex flex-col">
+              <div className="flex flex-row justify-between items-center p-3">
+                <h4 className="text-2xl font-bold">Shopping list</h4>
+                <p className="font-light text-sm">3 remaining</p>
+              </div>
+
+              <div className="flex justify-between items-center border-b border-border p-3">
+              <div className="flex flex-row items-center gap-3">
+                <input type="checkbox" id='water' name='water' value='yes' />
+                <label htmlFor="water">Water</label>
+              </div>
+              <p className="font-light text-sm">1 pack - 24 bottles</p>
+            </div>
+
+            <div className="flex justify-between items-center border-b border-border p-3">
+              <div className="flex flex-row items-center gap-3">
+                <input type="checkbox" id='milk' name='milk' value='yes' />
+                <label htmlFor="milk">Milk</label>
+              </div>
+              <p className="font-light text-sm">0.5 l</p>
+            </div>
+
+            <div className="flex justify-between items-center border-b border-border p-3">
+              <div className="flex flex-row items-center gap-3">
+                <input type="checkbox" id='beef' name='beef' value='yes' />
+                <label htmlFor="beef">Ground Beef</label>
+              </div>
+              <p className="font-light text-sm">1 lb</p>
+            </div>
+
+            </div>
+
+            
+
+            <div className="flex flex-row justify-start items-center p-3 gap-2.5">
+              <p className="text-xl font-semibold text-brand">View shopping list</p>
+              <a href="#"><FaArrowRightLong size={17} color="#1d4d33"/></a>
+            </div>
+          </div>
+          </div>
+        </section>
+
+        {/* pantry snapshot card */}
+        <section className="w-full h-70 p-3">
+          <div className="w-full h-full bg-white rounded-2xl border border-border">
 
           </div>
         </section>
