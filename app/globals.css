@@ -5,22 +5,24 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-canvas: #f7f5ef;
+  --color-surface: #ffffff;
+  --color-border: #ddd9ce;
+  --color-ink: #24352b;
+  --color-muted: #59665d;
+
+  --color-brand: #276443;
+  --color-brand-strong: #1d4d33;
+  --color-brand-soft: #e8f1e9;
+
+  --color-warning: #854d0e;
+  --color-warning-soft: #fef3c7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-canvas);
+  color: var(--color-ink);
   font-family: Arial, Helvetica, sans-serif;
 }
