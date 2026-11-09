@@ -3,52 +3,52 @@ import { IoIosWarning } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
-import { FaChevronRight } from "react-icons/fa";
 import { LuMilk } from "react-icons/lu";
 import { LuBeef } from "react-icons/lu";
-import { FaArrowRightLong } from "react-icons/fa6";
-
-
+import { FaBottleWater } from "react-icons/fa6";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="flex lg:flex-row flex-col lg:flex-1 items-start justify-start font-sans">
+    <div className="min-h-dvh w-full bg-canvas text-ink font-sans lg:grid lg:grid-cols-[14rem_minmax(0,1fr)]">
       {/* sidebar */}
       <Sidebar />
 
       {/* dashboard component */}
-      <section className="w-full min-h-screen border border-red-500">
+      <main id="overview" className="min-w-0 space-y-5 p-4 sm:p-6 lg:p-8">
         {/* overview component and add pantry item button */}
-        <div className="flex lg:flex-row flex-col justify-between items-center lg:p-3 p-4 ">
-          <div className="flex flex-col justify-start items-start gap-2.5 text-ink lg:mb-0 mb-6">
-            <p className="font-medium text-md text-gray-500">OVERVIEW</p> 
-            <h1 className="font-bold lg:text-5xl text-3xl">Your household at a glance</h1>
-            <p className="font-medium text-lg text-gray-500">A little planning. A well-stocked home.</p>
+        <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+          <div className="flex flex-col justify-start items-start gap-2.5 text-ink ">
+            <p className="font-medium text-sm text-muted">OVERVIEW</p> 
+            <h1 className="text-3xl font-bold tracking-tight xl:text-5xl">Your household at a glance.</h1>
+            <p className="font-medium text-lg text-muted">A little planning. A well-stocked home.</p>
           </div>
 
-          <button className="flex flex-row lg:justify-evenly justify-center items-center gap-2.5 lg:w-46 w-75 p-3 bg-brand-strong rounded-xl hover:bg-muted hover:shadow-md hover:shadow-warning cursor-pointer text-canvas  hover:text-canvas"> <FaPlus /> Add Pantry Item</button>
+          <button type="button" disabled className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-white disabled:opacity-70 sm:w-auto">
+            <FaPlus aria-hidden="true" /> Add pantry item
+          </button>
         </div>
 
         {/* Summary Cards */}
-        <section className="w-full flex lg:flex-row flex-col lg:gap-0 gap-5 justify-evenly items-center mt-3.5 h-32">
-          <div className="w-83 flex flex-row justify-start items-start gap-5 bg-white h-full border border-border rounded-2xl p-4">
-            <IoIosWarning size={50} color="#f59e0b" />
+        <section className="grid gap-3 sm:grid-cols-3">
+          <div className="flex min-w-0 items-start gap-3 rounded-2xl border border-border bg-surface p-4">
+            <IoIosWarning aria-hidden="true" size={28} className="shrink-0" color="#f59e0b" />
             <div className="flex flex-col justify-start items-start gap-3 "> 
               <p className="font-medium">Low or out of stock</p>
               <span className="font-bold text-4xl ">1</span>
             </div>
           </div>
 
-          <div className="w-83 flex flex-row justify-start items-start gap-5 bg-white h-full border border-border rounded-2xl p-4">
-            <CiCalendarDate size={50} color="#276443" />
+          <div className="flex min-w-0 items-start gap-3 rounded-2xl border border-border bg-surface p-4">
+            <CiCalendarDate aria-hidden="true" size={28} className="shrink-0" color="#276443" />
             <div className="flex flex-col justify-start items-start gap-3 "> 
               <p className="font-medium">Upcoming dates</p>
               <span className="font-bold text-4xl ">2</span>
             </div>
           </div>
 
-          <div className="w-83 flex flex-row justify-start items-start gap-5 bg-white h-full border border-border rounded-2xl p-4">
-            <IoCartOutline size={50} color="#854d0e" />
+          <div className="flex min-w-0 items-start gap-3 rounded-2xl border border-border bg-surface p-4">
+            <IoCartOutline aria-hidden="true" size={28} className="shrink-0" color="#854d0e" />
             <div className="flex flex-col justify-start items-start gap-3 "> 
               <p className="font-medium">Still to buy</p>
               <span className="font-bold text-4xl ">3</span>
@@ -57,53 +57,51 @@ export default function Home() {
         </section>
 
         {/* Need attention component */}
-        <section className="w-full flex flex-row h-100 lg:mt-1.5">
+        <section className="grid gap-4 xl:grid-cols-2">
 
-          <div className="w-1/2 h-full flex flex-col gap-4 p-3">
+          <div className="min-w-0 space-y-4">
 
-          <div className="bg-white flex flex-col border border-border h-40 rounded-xl">
+          <div className="rounded-2xl border border-border bg-surface">
             <div className="flex flex-row justify-between items-center p-3">
-              <h4 className="text-2xl font-bold">Needs attention</h4>
-              <a href="#"><FaChevronRight size={20} /></a>
+              <h2 className="text-2xl font-bold">Needs attention</h2>
             </div>
 
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-wrap items-center justify-between gap-x-2">
               <div className="flex flex-row gap-4 justify-center items-center p-2">
-                <LuMilk size={40} />
+                <LuMilk size={40} className="shrink-0" aria-hidden="true" />
                 <div>
-                  <h6 className="font-semibold">Milk</h6>
+                  <p className="font-semibold">Milk</p>
                   <p className="font-light">0.5 l remaining</p>
                 </div>
               </div>
 
               <div className="p-3 flex flex-col justify-center items-center gap-3">
-                <div className="w-35 h-8 bg-amber-200 rounded-3xl flex justify-center items-center text-md text-center"><p className="text-amber-500 font-bold">Low stock</p></div>
+                <div className="rounded-full bg-warning-soft px-3 py-1 text-sm"><p className="font-semibold text-warning">Low stock</p></div>
                 <p className="font-light text-sm">Threshold: 0.5 l</p>
               </div>
             </div>
           </div>
 
           {/* use soon card */}
-          <section className="bg-white border rounded-2xl border-border h-50">
+          <section className="rounded-2xl border border-border bg-surface">
             <div className="flex flex-row justify-between items-center p-3">
-              <h4 className="text-2xl font-bold">Use soon</h4>
-              <a href="#"><FaChevronRight size={20} /></a>
+              <h2 className="text-2xl font-bold">Use soon</h2>
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <div className="grid w-full grid-cols-[minmax(0,1fr)_4rem_4rem] items-center gap-3 border-b border-border p-4">
+              <div className="grid w-full grid-cols-[minmax(0,1fr)_3rem_3rem] items-center gap-2 border-b border-border p-3">
                 <div className="flex items-center gap-3">
-                  <LuMilk size={30} />
-                  <p className="font-semibold text-md">Milk</p>
+                  <LuMilk size={30} className="shrink-0" aria-hidden="true" />
+                  <p className="font-semibold text-sm">Milk</p>
                 </div>
                 <p className="text-right tabular-nums">0.5 l</p>
                 <p className="text-right">Nov 5</p>
               </div>
 
-              <div className="grid w-full grid-cols-[minmax(0,1fr)_4rem_4rem] items-center gap-3 p-4">
+              <div className="grid w-full grid-cols-[minmax(0,1fr)_3rem_3rem] items-center gap-2 p-3">
                 <div className="flex items-center gap-3">
-                  <LuBeef size={30} />
-                  <p className="font-semibold text-md">Ground beef</p>
+                  <LuBeef size={30} className="shrink-0" aria-hidden="true" />
+                  <p className="font-semibold text-sm">Ground beef</p>
                 </div>
                 <p className="text-right tabular-nums">1 lb</p>
                 <p className="text-right">Nov 6</p>
@@ -116,17 +114,17 @@ export default function Home() {
           </div>
 
           {/* shopping list card */}
-          <div className="w-1/2 h-full  p-3">
-          <div className="bg-white flex flex-col justify-between w-full h-full border border-border rounded-2xl">
+          <div id="shopping" className="min-w-0">
+          <div className="flex h-full flex-col justify-between rounded-2xl border border-border bg-surface">
             <div className="flex flex-col">
               <div className="flex flex-row justify-between items-center p-3">
-                <h4 className="text-2xl font-bold">Shopping list</h4>
+                <h2 className="text-2xl font-bold">Shopping list</h2>
                 <p className="font-light text-sm">3 remaining</p>
               </div>
 
               <div className="flex justify-between items-center border-b border-border p-3">
               <div className="flex flex-row items-center gap-3">
-                <input type="checkbox" id='water' name='water' value='yes' />
+                <input type="checkbox" disabled className="size-4 accent-brand" id='water' name='water' value='yes' />
                 <label htmlFor="water">Water</label>
               </div>
               <p className="font-light text-sm">1 pack - 24 bottles</p>
@@ -134,7 +132,7 @@ export default function Home() {
 
             <div className="flex justify-between items-center border-b border-border p-3">
               <div className="flex flex-row items-center gap-3">
-                <input type="checkbox" id='milk' name='milk' value='yes' />
+                <input type="checkbox" disabled className="size-4 accent-brand" id='milk' name='milk' value='yes' />
                 <label htmlFor="milk">Milk</label>
               </div>
               <p className="font-light text-sm">0.5 l</p>
@@ -142,7 +140,7 @@ export default function Home() {
 
             <div className="flex justify-between items-center border-b border-border p-3">
               <div className="flex flex-row items-center gap-3">
-                <input type="checkbox" id='beef' name='beef' value='yes' />
+                <input type="checkbox" disabled className="size-4 accent-brand" id='beef' name='beef' value='yes' />
                 <label htmlFor="beef">Ground Beef</label>
               </div>
               <p className="font-light text-sm">1 lb</p>
@@ -152,22 +150,66 @@ export default function Home() {
 
             
 
-            <div className="flex flex-row justify-start items-center p-3 gap-2.5">
-              <p className="text-xl font-semibold text-brand">View shopping list</p>
-              <a href="#"><FaArrowRightLong size={17} color="#1d4d33"/></a>
-            </div>
           </div>
           </div>
         </section>
 
         {/* pantry snapshot card */}
-        <section className="w-full h-70 p-3">
-          <div className="w-full h-full bg-white rounded-2xl border border-border">
+        <section id="pantry" className="min-w-0">
+          <div className="rounded-2xl border border-border bg-surface">
+            <div className="flex flex-row justify-between items-center p-3">
+              <h2 className="font-bold text-2xl">Pantry snapshot</h2>
+              <p className="font-light text-sm">3 sample items</p>
+            </div>
+
+            <div className="overflow-x-auto px-3 pb-3">
+              <table className="w-full min-w-64 text-left text-sm sm:text-base">
+                <caption className="sr-only">Pantry sample items</caption>
+
+                <thead className="text-sm text-muted">
+                  <tr className="border-b border-border">
+                    <th scope="col" className="w-2/5 py-3 font-medium">
+                      Item
+                    </th>
+                    <th scope="col" className="w-2/5 py-3 font-medium">
+                      Category
+                    </th>
+                    <th scope="col" className="w-1/5 py-3 text-right font-medium">
+                      Amount
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="py-4 pr-3"><div className="flex items-center gap-2"><LuMilk size={30} className="shrink-0" aria-hidden="true" /> Milk</div></td>
+                    <td className="py-4 pr-3 text-muted">Dairy &amp; Eggs</td>
+                    <td className="py-4 text-right whitespace-nowrap">0.5 l</td>
+                  </tr>
+
+                  <tr className="border-b border-border">
+                    <td className="py-4 pr-3"><div className="flex items-center gap-2"><FaBottleWater size={30} className="shrink-0" aria-hidden="true" /> Water</div></td>
+                    <td className="py-4 pr-3 text-muted">Other</td>
+                    <td className="py-4 text-right whitespace-nowrap">1 pack</td>
+                  </tr>
+
+                  <tr>
+                    <td className="py-4 pr-3"><div className="flex items-center gap-2"><LuBeef size={30} className="shrink-0" aria-hidden="true" /> Ground beef</div></td>
+                    <td className="py-4 pr-3 text-muted">Meat & Seafood</td>
+                    <td className="py-4 text-right whitespace-nowrap">1 lb</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
 
           </div>
         </section>
 
-      </section>
+        {/* dashboard footer */}
+        <Footer />
+
+      </main>
 
     </div>
   );

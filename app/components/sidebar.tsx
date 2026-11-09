@@ -1,30 +1,35 @@
 import { FaLeaf } from "react-icons/fa";
 import { FaHouseCrack } from "react-icons/fa6";
-import { MdOutlineFoodBank } from "react-icons/md";
 import { GiShoppingCart } from "react-icons/gi";
+import { MdOutlineFoodBank } from "react-icons/md";
+
+const links = [
+  { href: "#overview", label: "Overview", Icon: FaHouseCrack },
+  { href: "#pantry", label: "Pantry", Icon: MdOutlineFoodBank },
+  { href: "#shopping", label: "Shopping", Icon: GiShoppingCart },
+];
 
 export default function Sidebar() {
-    return (
-        <header className="lg:w-80 sticky top-0 w-fit lg:min-h-screen h-40 lg:flex lg:flex-col flex-col justify-between items-center p-3 lg:border-r border-b border-border ">
-                <div className="lg:w-full text-ink flex lg:flex-col flex-col gap-1 justify-start items-start">
-                  <div className="flex justify-start items-center text-3xl gap-1.5 text-brand-strong">
-                    <span><FaLeaf /> </span>
-                    <span className="text-3xl font-bold text-center">PantryPal</span> 
-                  </div>
-                  <h6 className="font-light text-sm">Know what you have. Buy what you need.</h6>
-        
-                  <nav className="flex lg:flex-col flex-row text-ink md:justify-start lg:mt-6 mt-9 gap-6 justify-evenly text-lg w-full h-auto items-start ">
-                    <a href="#" className="hover:bg-muted hover:text-canvas hover:shadow-md hover:shadow-warning p-2 rounded flex flex-row justify-center items-center gap-2.5"><span><FaHouseCrack /></span> Overview</a>
-                    <a href="#" className="hover:bg-muted hover:text-canvas hover:shadow-md hover:shadow-warning  p-2 rounded flex flex-row justify-center items-center gap-2.5"><span><MdOutlineFoodBank /></span> Pantry</a>
-                    <a href="#" className="hover:bg-muted hover:text-canvas hover:shadow-md hover:shadow-warning  p-2 rounded flex flex-row justify-center items-center gap-2.5"><span><GiShoppingCart /></span> Shopping</a>
-                  </nav>
-                </div>
-                
-        
-                 <div id='sidebar-footer' className="lg:flex lg:lex-row justify-start items-center gap-2 text-gray-400 text-sm font-light hidden">
-                  <FaLeaf />
-                  <p>Stored in this browser</p>
-                </div>
-              </header>
-    )
+  return (
+    <header className="border-b border-border bg-surface p-4 lg:sticky lg:top-0 lg:h-dvh lg:self-start lg:overflow-y-auto lg:border-b-0 lg:border-r lg:p-5">
+      <div className="flex items-center gap-2 text-2xl font-bold text-brand-strong">
+        <FaLeaf aria-hidden="true" />
+        <span>PantryPal</span>
+      </div>
+      <p className="mt-1 text-sm text-muted">Know what you have. Buy what you need.</p>
+
+      <nav aria-label="Dashboard sections" className="mt-4 flex flex-wrap gap-1 lg:mt-6 lg:flex-col">
+        {links.map(({ href, label, Icon }) => (
+          <a
+            key={href}
+            href={href}
+            className="inline-flex min-h-11 items-center gap-2 rounded-lg px-2.5 text-sm font-medium text-brand hover:bg-brand-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          >
+            <Icon aria-hidden="true" className="shrink-0" />
+            {label}
+          </a>
+        ))}
+      </nav>
+    </header>
+  );
 }
