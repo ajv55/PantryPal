@@ -8,7 +8,9 @@ import { LuBeef } from "react-icons/lu";
 import { FaBottleWater } from "react-icons/fa6";
 import Footer from "./components/footer";
 
+
 export default function Home() {
+
   return (
     <div className="min-h-dvh w-full bg-canvas text-ink font-sans lg:grid lg:grid-cols-[14rem_minmax(0,1fr)]">
       {/* sidebar */}
