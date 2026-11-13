@@ -2,11 +2,11 @@ import Sidebar from "./components/sidebar";
 import { IoIosWarning } from "react-icons/io";
 import { CiCalendarDate } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa6";
 import { LuMilk } from "react-icons/lu";
 import { LuBeef } from "react-icons/lu";
 import { FaBottleWater } from "react-icons/fa6";
 import Footer from "./components/footer";
+import AddPantryItemDrawer from "./components/AddPantryItemDrawer";
 
 
 export default function Home() {
@@ -26,9 +26,7 @@ export default function Home() {
             <p className="font-medium text-lg text-muted">A little planning. A well-stocked home.</p>
           </div>
 
-          <button type="button" disabled className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-white disabled:opacity-70 sm:w-auto">
-            <FaPlus aria-hidden="true" /> Add pantry item
-          </button>
+          <AddPantryItemDrawer />
         </div>
 
         {/* Summary Cards */}
